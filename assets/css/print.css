@@ -1,0 +1,183 @@
+/* assets/css/print.css */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Times New Roman', serif;
+    font-size: 12pt;
+    color: #000;
+    background: #fff;
+}
+
+.print-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 30px;
+    position: relative;
+}
+
+.uni-header {
+    text-align: center;
+    border-bottom: 3px double #1a3c5e;
+    padding-bottom: 16px;
+    margin-bottom: 20px;
+}
+.uni-header img { width: 75px; height: 75px; object-fit: contain; }
+.uni-header h1  { font-size: 16pt; color: #1a3c5e; font-weight: bold; margin-top: 6px; }
+.uni-header h2  { font-size: 13pt; color: #c8a951; margin-top: 2px; }
+.uni-header p   { font-size: 10pt; color: #555; }
+
+.doc-title {
+    text-align: center;
+    font-size: 14pt;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border: 2px solid #1a3c5e;
+    padding: 6px 16px;
+    display: inline-block;
+    margin: 16px auto;
+    color: #1a3c5e;
+}
+
+.section { margin-bottom: 18px; }
+
+.section-title {
+    background: #1a3c5e;
+    color: #fff;
+    padding: 4px 10px;
+    font-size: 11pt;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px 20px;
+}
+.info-item label {
+    font-size: 9pt;
+    color: #555;
+    display: block;
+}
+.info-item span {
+    font-size: 11pt;
+    font-weight: bold;
+    border-bottom: 1px dotted #ccc;
+    display: block;
+    padding-bottom: 2px;
+}
+
+.photo-box {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    width: 90px;
+    height: 110px;
+    border: 2px solid #1a3c5e;
+    overflow: hidden;
+    text-align: center;
+}
+.photo-box img     { width: 100%; height: 100%; object-fit: cover; }
+.photo-box .no-photo { font-size: 9pt; color: #999; padding-top: 40px; }
+
+.sig-box {
+    display: inline-block;
+    width: 150px;
+    height: 50px;
+    border-bottom: 1px solid #000;
+    vertical-align: bottom;
+}
+.sig-box img { height: 100%; object-fit: contain; }
+
+.sig-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: 30px;
+}
+.sig-row .sig-label { font-size: 10pt; margin-top: 4px; text-align: center; }
+
+.status-badge {
+    display: inline-block;
+    padding: 3px 12px;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 11pt;
+}
+.status-admitted { background: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+.status-progress { background: #cce5ff; color: #004085; border: 1px solid #b8daff; }
+.status-rejected { background: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
+
+table { width: 100%; border-collapse: collapse; font-size: 11pt; }
+th, td { border: 1px solid #ccc; padding: 5px 8px; }
+th { background: #f5f5f5; font-weight: bold; }
+
+.print-footer {
+    margin-top: 30px;
+    border-top: 2px solid #1a3c5e;
+    padding-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    font-size: 10pt;
+}
+
+.screen-only { text-align: center; margin-bottom: 20px; }
+.screen-only button {
+    background: #1a3c5e;
+    color: #fff;
+    border: none;
+    padding: 10px 28px;
+    border-radius: 8px;
+    font-size: 13pt;
+    cursor: pointer;
+    margin-right: 10px;
+}
+.screen-only a { color: #1a3c5e; text-decoration: none; font-size: 11pt; }
+
+@media print {
+    .screen-only  { display: none !important; }
+    .print-wrapper { padding: 10px; }
+    body { font-size: 11pt; }
+}
+.doc-title-photo {
+    display: flex;
+    justify-content: space-between; /* Title left, photo right */
+    align-items: flex-start;        /* Align top of photo with top of title */
+    margin: 16px 0;                 /* Space below header */
+}
+
+.doc-title-photo .doc-title {
+    font-size: 14pt;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border: 2px solid #1a3c5e;
+    padding: 6px 16px;
+    color: #1a3c5e;
+    display: inline-block;
+}
+
+.doc-title-photo .photo-box {
+    top: 5px;
+    width: 90px;
+    height: 110px;
+    border: 2px solid #1a3c5e;
+    overflow: hidden;
+    text-align: center;
+    flex-shrink: 0; /* Prevent shrinking */
+    position: relative; /* Ensure it’s in normal flow */
+}
+
+.doc-title-photo .photo-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.doc-title-photo .photo-box .no-photo {
+    font-size: 9pt;
+    color: #999;
+    padding-top: 40px;
+}

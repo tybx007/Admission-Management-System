@@ -1,0 +1,3 @@
+<?php
+// OTP email template
+?>

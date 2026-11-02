@@ -1,0 +1,3 @@
+<?php
+// Welcome email template
+?>

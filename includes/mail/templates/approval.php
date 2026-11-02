@@ -1,0 +1,3 @@
+<?php
+// Approval email template
+?>
